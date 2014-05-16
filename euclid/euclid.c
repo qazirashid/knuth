@@ -18,16 +18,16 @@ int main(int argc, char ** argv){
     return(1);
   }
   // We can start the Euclid Algorithm now.
-  step1: r = m%n;  // Divide m by n, store remainder in r.
-  if(r == 0){
+  step1: r = m%n;  // step 1  [Find Remainder] Divide m by n, store remainder in r.
+  step2: if(r == 0){ // step 2 [Is remainder zero?] 
     printf(" The GCD is %d\n",n);
     return(0); // algorithm terminated with success
   }
-  else{
+  else{  //step3 [Reduce]
     printf("m = %d, n = %d, r = %d : Starting new iteration\n",m,n,r);
-    m = n;
-    n = r;   // Step 2 of Euclid Algorithm
-    goto step1;
+    step3: m = n;
+    n = r;  
+    goto step1;// jumpt step 1[Find Remainder]
   }
     // The algorithm is complete. The use of GOTO statement is discouraged in programming. But it is used here to specify the algorithm as it appears in algorithmic notation.  
 }
